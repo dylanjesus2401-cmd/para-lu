@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para Luana</title>
+
+    <!-- Fuente romántica -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+        rel="stylesheet"
+    >
+
+
+<style>
+
+    /* =========================
+       CONFIGURACIÓN GENERAL
+    ========================= */
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+
+        margin: 0;
+
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        overflow: hidden;
+
+        color: #f5f0e6;
+
+        font-family: Georgia, serif;
+
+        /* Fondo dorado oscuro */
+
+        background:
+            radial-gradient(
+                circle at 50% 45%,
+                #4a350c 0%,
+                #241b0b 35%,
+                #100e0a 75%,
+                #080807 100%
+            );
+
+        position: relative;
+    }
+
+
+    /* =========================
+       BRILLOS DEL FONDO
+    ========================= */
+
+    body::before {
+
+        content: "";
+
+        position: fixed;
+
+        width: 500px;
+        height: 500px;
+
+        left: 50%;
+        top: 50%;
+
+        transform: translate(-50%, -50%);
+
+        background: rgba(255, 193, 7, 0.12);
+
+        border-radius: 50%;
+
+        filter: blur(120px);
+
+        pointer-events: none;
+    }
+
+
+    body::after {
+
+        content: "";
+
+        position: fixed;
+
+        width: 250px;
+        height: 250px;
+
+        left: 10%;
+        top: 10%;
+
+        background: rgba(212, 175, 55, 0.10);
+
+        border-radius: 50%;
+
+        filter: blur(80px);
+
+        pointer-events: none;
+    }
+
+
+    /* =========================
+       FLORES AMARILLAS
+    ========================= */
+
+    .flor {
+
+        position: fixed;
+
+        top: -70px;
+
+        z-index: 1;
+
+        color: #ffd43b;
+
+        font-size: 22px;
+
+        opacity: 0.85;
+
+        filter:
+            drop-shadow(0 0 8px rgba(255, 193, 7, 0.7));
+
+        animation:
+            caer linear infinite;
+
+        pointer-events: none;
+    }
+
+
+    @keyframes caer {
+
+        0% {
+
+            transform:
+                translateY(-70px)
+                rotate(0deg);
+
+            opacity: 0;
+        }
+
+
+        10% {
+
+            opacity: 0.9;
+        }
+
+
+        50% {
+
+            transform:
+                translateY(55vh)
+                translateX(30px)
+                rotate(180deg);
+        }
+
+
+        100% {
+
+            transform:
+                translateY(110vh)
+                translateX(-40px)
+                rotate(360deg);
+
+            opacity: 0;
+        }
+
+    }
+
+
+    /* =========================
+       TARJETA
+    ========================= */
+
+    .tarjeta {
+
+        width: min(730px, 90%);
+
+        padding: 60px 55px;
+
+        text-align: center;
+
+        position: relative;
+
+        z-index: 2;
+
+        border-radius: 24px;
+
+        border: 1px solid #e0ad22;
+
+        /* Fondo transparente/dorado */
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(42, 32, 13, 0.92),
+                rgba(18, 15, 9, 0.96)
+            );
+
+        /* Brillo exterior */
+
+        box-shadow:
+
+            0 0 25px rgba(212, 175, 55, 0.12),
+
+            0 20px 60px rgba(0, 0, 0, 0.7),
+
+            inset 0 0 40px rgba(212, 175, 55, 0.04);
+
+        backdrop-filter: blur(8px);
+
+        animation: aparecer 1s ease;
+    }
+
+
+    @keyframes aparecer {
+
+        from {
+
+            opacity: 0;
+
+            transform:
+                translateY(25px)
+                scale(0.97);
+        }
+
+        to {
+
+            opacity: 1;
+
+            transform:
+                translateY(0)
+                scale(1);
+        }
+
+    }
+
+
+    /* =========================
+       TEXTO SUPERIOR
+    ========================= */
+
+    .etiqueta {
+
+        color: #e8bd3c;
+
+        font-size: 0.85em;
+
+        letter-spacing: 5px;
+
+        text-transform: uppercase;
+
+        margin-bottom: 18px;
+
+        font-family: Georgia, serif;
+
+        text-shadow:
+            0 0 8px rgba(255, 193, 7, 0.2);
+    }
+
+
+    /* =========================
+       TÍTULO
+    ========================= */
+
+    h1 {
+
+        margin: 0 0 25px;
+
+        color: #e5b82f;
+
+        font-family: "Great Vibes", cursive;
+
+        font-size: clamp(3em, 6vw, 5em);
+
+        font-weight: normal;
+
+        line-height: 1.2;
+
+        text-shadow:
+            0 0 8px rgba(255, 193, 7, 0.25),
+            0 0 25px rgba(255, 193, 7, 0.08);
+    }
+
+
+    /* =========================
+       SEPARADOR
+    ========================= */
+
+    .linea {
+
+        color: #e4b62f;
+
+        margin-bottom: 35px;
+
+        letter-spacing: 4px;
+
+        font-size: 18px;
+
+        text-shadow:
+            0 0 8px rgba(255, 193, 7, 0.5);
+    }
+
+
+    /* =========================
+       INPUT
+    ========================= */
+
+    input {
+
+        width: 100%;
+
+        padding: 17px 20px;
+
+        margin-bottom: 18px;
+
+        border-radius: 35px;
+
+        border: 1px solid #d9aa24;
+
+        outline: none;
+
+        background:
+            rgba(10, 9, 6, 0.75);
+
+        color: #f5f0e6;
+
+        font-family: Georgia, serif;
+
+        font-size: 16px;
+
+        text-align: center;
+
+        transition: 0.3s;
+    }
+
+
+    input::placeholder {
+
+        color: #a9a18e;
+    }
+
+
+    input:focus {
+
+        border-color: #ffd43b;
+
+        box-shadow:
+            0 0 15px rgba(255, 193, 7, 0.25);
+    }
+
+
+    /* =========================
+       BOTÓN
+    ========================= */
+
+    button {
+
+        width: 100%;
+
+        padding: 17px;
+
+        border: none;
+
+        border-radius: 35px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #e6b82e,
+                #f5c842,
+                #d9a91e
+            );
+
+        color: #17120a;
+
+        font-family: Georgia, serif;
+
+        font-size: 17px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+
+        transition: all 0.25s ease;
+
+        box-shadow:
+            0 5px 20px rgba(212, 175, 55, 0.15);
+    }
+
+
+    button:hover {
+
+        transform: scale(1.03);
+
+        box-shadow:
+            0 8px 30px rgba(255, 193, 7, 0.3);
+    }
+
+
+    button:active {
+
+        transform: scale(0.98);
+    }
+
+
+    /* =========================
+       PISTA
+    ========================= */
+
+    .pista {
+
+        margin-top: 25px;
+
+        color: #aaa18c;
+
+        font-size: 0.9em;
+
+        font-family: Georgia, serif;
+    }
+
+
+    /* =========================
+       ERROR
+    ========================= */
+
+    .error {
+
+        display: none;
+
+        margin-top: 12px;
+
+        color: #ff9b7a;
+
+        font-size: 0.9em;
+
+        font-family: Georgia, serif;
+    }
+
+
+    /* =========================
+       RESPONSIVE PARA CELULAR
+    ========================= */
+
+    @media (max-width: 600px) {
+
+        .tarjeta {
+
+            padding: 45px 25px;
+
+            width: 92%;
+
+        }
+
+
+        .etiqueta {
+
+            font-size: 0.7em;
+
+            letter-spacing: 3px;
+        }
+
+
+        h1 {
+
+            font-size: 3.2em;
+
+            line-height: 1.25;
+        }
+
+
+        .linea {
+
+            font-size: 15px;
+
+            letter-spacing: 2px;
+        }
+
+    }
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     FLORES AMARILLAS
+========================= -->
+
+<div class="flor"
+     style="left: 3%; animation-duration: 9s;">
+    🌼
+</div>
+
+<div class="flor"
+     style="left: 13%; animation-duration: 12s; animation-delay: 2s;">
+    🌻
+</div>
+
+<div class="flor"
+     style="left: 25%; animation-duration: 10s; animation-delay: 1s;">
+    🌼
+</div>
+
+<div class="flor"
+     style="left: 38%; animation-duration: 13s; animation-delay: 4s;">
+    🌼
+</div>
+
+<div class="flor"
+     style="left: 52%; animation-duration: 9s; animation-delay: 2.5s;">
+    🌻
+</div>
+
+<div class="flor"
+     style="left: 67%; animation-duration: 11s; animation-delay: 1s;">
+    🌼
+</div>
+
+<div class="flor"
+     style="left: 80%; animation-duration: 10s; animation-delay: 3s;">
+    🌻
+</div>
+
+<div class="flor"
+     style="left: 92%; animation-duration: 12s; animation-delay: .5s;">
+    🌼
+</div>
+
+
+<!-- =========================
+     TARJETA
+========================= -->
+
+<div class="tarjeta">
+
+
+    <div class="etiqueta">
+        Espero te guste cariño
+    </div>
+
+
+    <h1>
+        Feliz día de las flores amarillas mi niña jsjs
+    </h1>
+
+
+    <div class="linea">
+        ♡ ───── 🌼 ───── ♡
+    </div>
+
+
+    <input
+        type="text"
+        id="clave"
+        placeholder="Escribe la contraseña"
+        autocomplete="off"
+    >
+
+
+    <button onclick="verificar()">
+        Abrir la cartita
+    </button>
+
+
+    <div class="error" id="error">
+        ¿Necesitas ayuda? inicia con L 
+    </div>
+
+
+    <div class="pista">
+        trata de adivinar jeje
+    </div>
+
+
+</div>
+
+
+<script>
+
+    function verificar() {
+
+        const clave = document
+            .getElementById("clave")
+            .value
+            .trim()
+            .toLowerCase();
+
+
+        if (clave === "luana") {
+
+            const tarjeta =
+                document.querySelector(".tarjeta");
+
+
+            tarjeta.style.transform =
+                "scale(1.05)";
+
+
+            tarjeta.style.opacity =
+                "0";
+
+
+            setTimeout(() => {
+
+                window.location.href =
+                    "carta.html";
+
+            }, 500);
+
+
+        } else {
+
+            document
+                .getElementById("error")
+                .style.display = "block";
+
+        }
+
+    }
+
+
+    /* ENTER PARA ABRIR */
+
+    document
+        .getElementById("clave")
+        .addEventListener("keydown", function(e) {
+
+            if (e.key === "Enter") {
+
+                verificar();
+
+            }
+
+        });
+
+</script>
+
+
+</body>
+</html>

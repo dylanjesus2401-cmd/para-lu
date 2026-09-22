@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cartitas para Luana</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        /* ========================================
+           FONDO
+        ======================================== */
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            padding: 50px 15px;
+
+            color: #f5f0e6;
+
+            font-family: Georgia, serif;
+
+            background:
+                radial-gradient(
+                    circle at 50% 40%,
+                    #4a350c 0%,
+                    #241b0b 35%,
+                    #100e0a 75%,
+                    #080807 100%
+                );
+
+            overflow-x: hidden;
+
+            position: relative;
+        }
+
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            left: 50%;
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            background:
+                rgba(255, 193, 7, 0.12);
+
+            border-radius: 50%;
+
+            filter: blur(120px);
+
+            pointer-events: none;
+
+            z-index: 0;
+        }
+
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            width: 250px;
+            height: 250px;
+
+            left: 5%;
+            top: 10%;
+
+            background:
+                rgba(212, 175, 55, 0.10);
+
+            border-radius: 50%;
+
+            filter: blur(80px);
+
+            pointer-events: none;
+
+            z-index: 0;
+        }
+
+
+        /* ========================================
+           FLORES
+        ======================================== */
+
+        .flor {
+
+            position: fixed;
+
+            top: -60px;
+
+            z-index: 1;
+
+            font-size: 22px;
+
+            opacity: .85;
+
+            pointer-events: none;
+
+            filter:
+                drop-shadow(
+                    0 0 8px
+                    rgba(255, 193, 7, 0.7)
+                );
+
+            animation:
+                caer linear infinite;
+        }
+
+
+        @keyframes caer {
+
+            0% {
+
+                transform:
+                    translateY(-70px)
+                    rotate(0deg);
+
+                opacity: 0;
+            }
+
+            10% {
+
+                opacity: .9;
+            }
+
+            50% {
+
+                transform:
+                    translateY(55vh)
+                    translateX(30px)
+                    rotate(180deg);
+            }
+
+            100% {
+
+                transform:
+                    translateY(110vh)
+                    translateX(-40px)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+
+        }
+
+
+        /* ========================================
+           CONTENEDOR
+        ======================================== */
+
+        .contenedor {
+
+            width: min(900px, 95%);
+
+            margin: auto;
+
+            text-align: center;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* ========================================
+           ENCABEZADO
+        ======================================== */
+
+        .titulo {
+
+            color: #e8bd3c;
+
+            font-size: 14px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 10px;
+        }
+
+
+        .subtitulo {
+
+            font-family:
+                "Great Vibes",
+                cursive;
+
+            color: #e5b82f;
+
+            font-size: 48px;
+
+            margin-top: 0;
+
+            margin-bottom: 45px;
+
+            font-weight: normal;
+
+            text-shadow:
+                0 0 10px
+                rgba(255,193,7,.15);
+        }
+
+
+        /* ========================================
+           CARTAS
+        ======================================== */
+
+        .cartas {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 30px;
+
+            max-width: 750px;
+
+            margin: auto;
+        }
+
+
+        .carta {
+
+            position: relative;
+
+            height: 190px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #f0c43c,
+                    #d4a927,
+                    #b88616
+                );
+
+            border-radius: 10px;
+
+            cursor: pointer;
+
+            box-shadow:
+
+                0 15px 35px
+                rgba(0,0,0,.5),
+
+                0 0 20px
+                rgba(212,175,55,.12);
+
+            transition:
+                .35s;
+
+            overflow: hidden;
+        }
+
+
+        .carta:hover {
+
+            transform:
+                translateY(-8px)
+                scale(1.02);
+
+            box-shadow:
+
+                0 20px 45px
+                rgba(0,0,0,.6),
+
+                0 0 30px
+                rgba(255,193,7,.25);
+        }
+
+
+        .carta::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 0;
+            height: 0;
+
+            border-left:
+                50% solid transparent;
+
+            border-right:
+                50% solid transparent;
+
+            border-top:
+                95px solid #b89525;
+
+            z-index: 2;
+        }
+
+
+        .carta::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: 0;
+
+            width: 0;
+            height: 0;
+
+            border-top:
+                90px solid transparent;
+
+            border-left:
+                375px solid rgba(255,220,100,.20);
+
+            transform:
+                translateY(90px);
+
+            z-index: 1;
+        }
+
+
+        .corazon {
+
+            position: absolute;
+
+            left: 50%;
+            top: 48%;
+
+            transform:
+                translate(-50%, -50%);
+
+            font-size: 42px;
+
+            color: #201909;
+
+            z-index: 4;
+        }
+
+
+        .numero {
+
+            position: absolute;
+
+            bottom: 15px;
+
+            left: 0;
+
+            width: 100%;
+
+            color: #33270c;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            letter-spacing: 2px;
+
+            z-index: 5;
+        }
+
+
+        /* ========================================
+           MODAL
+        ======================================== */
+
+        .modal {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(0,0,0,.78);
+
+            backdrop-filter:
+                blur(8px);
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                .35s;
+
+            z-index: 20;
+        }
+
+
+        .modal.activa {
+
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+
+        /* ========================================
+           PAPEL
+        ======================================== */
+
+        .papel {
+
+            width: min(700px, 95%);
+
+            max-height: 85vh;
+
+            overflow-y: auto;
+
+            padding: 45px;
+
+            border-radius: 8px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #fffdf3,
+                    #f5f0e6
+                );
+
+            color: #292938;
+
+            box-shadow:
+
+                0 20px 60px
+                rgba(0,0,0,.7),
+
+                0 0 30px
+                rgba(212,175,55,.2);
+
+            transform:
+                translateY(30px)
+                scale(.95);
+
+            transition:
+                .4s;
+
+            text-align: left;
+        }
+
+
+        .modal.activa .papel {
+
+            transform:
+                translateY(0)
+                scale(1);
+        }
+
+
+        .papel h2 {
+
+            text-align: center;
+
+            color: #a38218;
+
+            font-family:
+                "Great Vibes",
+                cursive;
+
+            font-size: 48px;
+
+            font-weight: normal;
+
+            margin-top: 0;
+
+            margin-bottom: 35px;
+        }
+
+
+        .papel p {
+
+            font-size: 18px;
+
+            line-height: 2;
+
+            margin-bottom: 20px;
+
+            white-space: pre-line;
+
+            text-align: center;
+
+            color: #29251d;
+        }
+
+
+        .firma {
+
+            text-align: right;
+
+            color: #a38218;
+
+            font-family:
+                "Great Vibes",
+                cursive;
+
+            font-size: 34px;
+
+            margin-top: 35px;
+        }
+
+
+        /* ========================================
+           BOTÓN CERRAR
+        ======================================== */
+
+        .cerrar {
+
+            display: block;
+
+            margin:
+                30px auto 0;
+
+            padding:
+                12px 25px;
+
+            border: none;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e6b82e,
+                    #f5c842,
+                    #d9a91e
+                );
+
+            color: #17120a;
+
+            font-family:
+                Georgia, serif;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition:
+                .25s;
+        }
+
+
+        .cerrar:hover {
+
+            transform:
+                scale(1.05);
+
+            box-shadow:
+                0 5px 20px
+                rgba(255,193,7,.3);
+        }
+
+
+        /* ========================================
+           BOTONES DE NAVEGACIÓN
+           AHORA LOS DOS SON IGUALES
+        ======================================== */
+
+        .volver,
+        .boton-collage {
+
+            display: inline-block;
+
+            width: 245px;
+
+            padding: 14px 20px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e6b82e,
+                    #f5c842,
+                    #d9a91e
+                );
+
+            color: #17120a;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            font-family:
+                Georgia, serif;
+
+            font-size: 18px;
+
+            text-align: center;
+
+            transition:
+                .3s;
+
+            vertical-align: middle;
+        }
+
+
+        .volver {
+
+            margin:
+                45px 5px 0;
+        }
+
+
+        .boton-collage {
+
+            margin:
+                45px 5px 0;
+        }
+
+
+        .volver:hover,
+        .boton-collage:hover {
+
+            transform:
+                scale(1.05);
+
+            box-shadow:
+                0 5px 20px
+                rgba(255,193,7,.3);
+        }
+
+
+        /* ========================================
+           CELULAR
+        ======================================== */
+
+        @media (max-width: 650px) {
+
+            .cartas {
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 25px;
+
+                max-width: 330px;
+            }
+
+
+            .subtitulo {
+
+                font-size: 40px;
+            }
+
+
+            .papel {
+
+                padding:
+                    28px 22px;
+            }
+
+
+            .papel h2 {
+
+                font-size: 40px;
+            }
+
+
+            .papel p {
+
+                font-size: 16px;
+
+                line-height: 1.9;
+            }
+
+
+            .volver,
+            .boton-collage {
+
+                width: 245px;
+
+                display: block;
+
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     FLORES
+========================================== -->
+
+<div class="flor"
+     style="left:5%; animation-duration:9s;">
+    🌼
+</div>
+
+<div class="flor"
+     style="left:20%; animation-duration:12s; animation-delay:2s;">
+    🌻
+</div>
+
+<div class="flor"
+     style="left:40%; animation-duration:10s; animation-delay:1s;">
+    🌼
+</div>
+
+<div class="flor"
+     style="left:60%; animation-duration:13s; animation-delay:3s;">
+    🌻
+</div>
+
+<div class="flor"
+     style="left:80%; animation-duration:9s; animation-delay:1.5s;">
+    🌼
+</div>
+
+<div class="flor"
+     style="left:95%; animation-duration:12s; animation-delay:.5s;">
+    🌻
+</div>
+
+
+
+<!-- ==========================================
+     CONTENEDOR
+========================================== -->
+
+<div class="contenedor">
+
+
+    <div class="titulo">
+        Un pequeño rincón para ti
+    </div>
+
+
+    <h1 class="subtitulo">
+        cartitas pequeñas para ti, mi pequeña lu ♡
+    </h1>
+
+
+
+    <!-- ======================================
+         LAS 10 CARTAS
+    ======================================= -->
+
+    <div class="cartas">
+
+
+        <div class="carta" onclick="abrirCarta(1)">
+
+            <div class="corazon">
+                ♡
+            </div>
+
+            <div class="numero">
+                CARTA I
+            </div>
+
+        </div>
+
+
+        <div class="carta" onclick="abrirCarta(2)">
+
+            <div class="corazon">
+                ♡
+            </div>
+
+            <div class="numero">
+                CARTA II
+            </div>
+
+        </div>
+
+
+        <div class="carta" onclick="abrirCarta(3)">
+
+            <div class="corazon">
+                ♡
+            </div>
+
+            <div class="numero">
+                CARTA III
+            </div>
+
+        </div>
+
+
+        <div class="carta" onclick="abrirCarta(4)">
+
+            <div class="corazon">
+                ♡
+            </div>
+
+            <div class="numero">
+                CARTA IV
+            </div>
+
+        </div>
+
+
+        <div class="carta" onclick="abrirCarta(5)">
+
+            <div class="corazon">
+                ♡
+            </div>
+
+            <div class="numero">
+                CARTA V
+            </div>
+
+        </div>
+
+
+        <div class="carta" onclick="abrirCarta(6)">
+
+            <div class="corazon">
+                ♡
+            </div>
+
+            <div class="numero">
+                CARTA VI
+            </div>
+
+        </div>
+
+
+        <div class="carta" onclick="abrirCarta(7)">
+
+            <div class="corazon">
+                ♡
+            </div>
+
+            <div class="numero">
+                CARTA VII
+            </div>
+
+        </div>
+
+
+        <div class="carta" onclick="abrirCarta(8)">
+
+            <div class="corazon">
+                ♡
+            </div>
+
+            <div class="numero">
+                CARTA VIII
+            </div>
+
+        </div>
+
+
+        <div class="carta" onclick="abrirCarta(9)">
+
+            <div class="corazon">
+                ♡
+            </div>
+
+            <div class="numero">
+                CARTA IX
+            </div>
+
+        </div>
+
+
+        <div class="carta" onclick="abrirCarta(10)">
+
+            <div class="corazon">
+                ♡
+            </div>
+
+            <div class="numero">
+                CARTA X
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ======================================
+         BOTONES
+    ======================================= -->
+
+    <a
+        href="index.html"
+        class="volver">
+
+        ← Volver al inicio
+
+    </a>
+
+
+    <a
+        href="collage.html"
+        class="boton-collage">
+
+        un par de fotitos
+
+    </a>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     CARTA 1
+===================================================== -->
+
+<div class="modal" id="modal1">
+
+    <div class="papel">
+
+        <h2>
+            cómo empezó todo
+        </h2>
+
+        <p>
+desde el primero de febrero del 2024
+ya te conocia un par de dias 
+y sabia perfectamente 
+que serias alguien que amaria eternamente.
+
+El tiempo a tu lado pasa demasiado rápido,
+y detesto eso,
+detesto sentir que los días
+no me alcanzan contigo.
+Quiero que los días tengan más horas,
+más minutos, más segundos,
+para estar a tu lado,
+solos tú y yo,
+recorriendo el mundo juntos.
+
+Pero todo esto empezó mucho antes de imaginarlo:
+por un comentario en TikTok.
+Te escribí, y encontré tu Instagram
+en tu propia biografía.
+Tú, asustada, me preguntabas cómo lo conseguí,
+sin recordar que ahí siempre estuvo.
+
+Te amo desde ese primer encuentro,
+desde ese primer te amo en tu cumpleaños.
+Te amo eternamente.
+Eres mi otra mitad.
+        </p>
+
+        <div class="firma">
+            te amare eternamente ♡
+        </div>
+
+        <button
+            class="cerrar"
+            onclick="cerrarCarta(1)">
+
+            aqui puedes cerrar la cartita cariño
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CARTA 2
+===================================================== -->
+
+<div class="modal" id="modal2">
+
+    <div class="papel">
+
+        <h2>
+            El amor que no pedí, pero encontré
+        </h2>
+
+        <p>
+No lo estaba buscando.
+No tenía espacio para nadie
+porque ni yo me tenía a mí.
+Estaba cansado de cargarme,
+de despertar sin ganas,
+de sentir que ya no valía la pena seguir intentando.
+
+No pedí que llegaras.
+No pedí que alguien viera
+lo que yo ya no quería ver.
+
+Pero llegaste,
+sin avisar, sin buscarlo,
+y de a poco, sin darme cuenta,
+empecé a querer quedarme
+solo por verte otra vez.
+
+Me ayudaste a mejorar
+cuando ni yo creía que se podía.
+Hoy le agradezco al mundo
+haberte puesto en mi camino,
+porque sin ti me siento perdido,
+pero contigo aprendí
+que valía la pena quedarme.
+
+No fue algo que pedí.
+Fue lo mejor que me pasó.
+        </p>
+
+        <div class="firma">
+            estoy agradecido contigo mi amor, te amo, gracias por todo ♡
+        </div>
+
+        <button
+            class="cerrar"
+            onclick="cerrarCarta(2)">
+
+            espero te este gustando mi amor
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CARTA 3
+===================================================== -->
+
+<div class="modal" id="modal3">
+
+    <div class="papel">
+
+        <h2>
+            Tus ojos, mi refugio
+        </h2>
+
+        <p>
+Me encantan tus ojos,
+esos que a veces escondes
+detrás de un lente que no eres tú.
+Prefiero mil veces
+tus ojitos de verdad,
+los que no necesitan nada
+para verse hermosos.
+
+Pero lo que más me fascina
+no se ve, se escucha:
+tu voz en una llamada
+tiene el poder de detenerme el día completo.
+Podría pasar horas
+solo escuchándote hablar
+de nada y de todo.
+
+A veces me pregunto
+por qué el mundo te puso tan lejos,
+como si quisiera enseñarme algo
+que todavía no entiendo del todo.
+Pero quiero ser yo
+quien te despierte un domingo,
+aunque sea solo con una llamada.
+
+Porque eres preciosa, sí,
+pero eso es lo de menos.
+Eres inteligente, fuerte,
+tímida de una forma que me desarma,
+y no sabes bien cómo reaccionar
+cuando te digo todo esto —
+y eso, precisamente eso,
+es lo que más amo de ti.
+
+No amo solo tu cuerpo.
+Amo tu alma, tu forma de ser,
+lo que piensas, lo que callas,
+lo que sos cuando nadie te ve.
+Me fascinas entera, Luana,
+mente y todo lo demás.
+        </p>
+
+        <div class="firma">
+            sabes?, lo que mas me gusta de tu cuerpo son tus precioso ojos. ♡
+        </div>
+
+        <button
+            class="cerrar"
+            onclick="cerrarCarta(3)">
+
+            Chao ojos de contactos, igual se te miran lindos, pero mejor tus ojos.
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CARTA 4
+===================================================== -->
+
+<div class="modal" id="modal4">
+
+    <div class="papel">
+
+        <h2>
+            Lo que nunca te dije
+        </h2>
+
+        <p>
+Hubo días que no te conté,
+noches que me guardé para mí solo,
+mientras tú eras la novia perfecta
+y yo apenas podía sostenerme.
+
+Quise decírtelo llorando,
+contarte cómo me sentía por dentro,
+pero tenía miedo de que un día
+me vieras como una carga
+y no como tu novio.
+
+Así que callé.
+No porque no confiara en ti,
+sino porque no quería
+que mi peso fuera también el tuyo.
+
+Hoy te lo digo, aunque tarde:
+estuve mal, mucho tiempo mal.
+Y aun así nunca dejé de amarte,
+te amo demasiado,
+más de lo que las palabras alcanzan.
+
+Siento no haberte dicho antes cómo estaba,
+pero prefiero decirte esto:
+estoy mejorando.
+Antes vivía triste,
+ahora aprendo a llevar las cosas mejor,
+y eso te lo debo a ti.
+
+Gracias, Luana.
+En serio, gracias.
+Por quedarte sin saberlo todo,
+por ser la razón
+de que hoy pueda escribir esto
+en vez de solo sentirlo.
+        </p>
+
+        <div class="firma">
+            perdoname por no contarte nada..♡
+        </div>
+
+        <button
+            class="cerrar"
+            onclick="cerrarCarta(4)">
+
+            eso cambiara, esta cambiando jsjs, no es q no tenga confianza, solo no queria ser una carga
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CARTA 5
+===================================================== -->
+
+<div class="modal" id="modal5">
+
+    <div class="papel">
+
+        <h2>
+            Perdón
+        </h2>
+
+        <p>
+Perdón por cada noche que te hice llorar sola,
+por las palabras que dije sin pensar,
+por hacerte dudar de quién eras
+cuando conmigo debiste sentirte segura.
+
+Perdón por la persona que llegué a ser contigo,
+esa que no te mereciste nunca.
+Sé que no basta con decirlo,
+pero necesito que lo sepas de verdad:
+estoy arrepentido, Luana.
+
+Perdón por todo.
+En serio.
+No busco que lo olvides,
+solo que sepas que lo cargo conmigo.
+
+Pero te amo,
+y de esta culpa
+quiero salir siendo mejor para ti.
+        </p>
+
+        <div class="firma">
+            perdoname por todo, se que mis palabras no son suficientes. ♡
+        </div>
+
+        <button
+            class="cerrar"
+            onclick="cerrarCarta(5)">
+
+            hare que todo sea mejor mi amor, te amo demasiado
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CARTA 6
+===================================================== -->
+
+<div class="modal" id="modal6">
+
+    <div class="papel">
+
+        <h2>
+            Mis errores, tu paciencia
+        </h2>
+
+        <p>
+No fui perfecto, ni cerca.
+Hubo veces que actué sin pensar en ti primero,
+que puse mi orgullo antes que tu tranquilidad,
+que te fallé de formas que ni yo entendía en el momento.
+
+Y aun así, ahí estabas.
+No porque tuvieras que estarlo,
+sino porque decidiste hacerlo,
+una y otra vez,
+cuando lo fácil hubiera sido irte.
+
+Nunca me pediste que fuera perfecto.
+Solo pediste que lo intentara,
+y cada vez que caí,
+me diste espacio para levantarme.
+
+Eso no se agradece con palabras,
+se agradece con tiempo,
+demostrando que esa paciencia
+no fue en vano.
+
+Gracias por tu fuerza, Luana,
+por creer en mí
+en los momentos que yo mismo
+no me hubiera dado otra oportunidad.
+        </p>
+
+        <div class="firma">
+            gracias por creer en mi, sere mejor persona para ti. ♡
+        </div>
+
+        <button
+            class="cerrar"
+            onclick="cerrarCarta(6)">
+
+            Te amo luana, sere mejor para ti, para nosotros
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CARTA 7
+===================================================== -->
+
+<div class="modal" id="modal7">
+
+    <div class="papel">
+
+        <h2>
+            Ser mejor para ti
+        </h2>
+
+        <p>
+He pensado mucho en mí mismo,
+en cada error que cargué contigo,
+y he decidido algo:
+quiero ser mejor persona,
+para ti, porque te amo demasiado.
+
+Sé que me equivoqué tantas veces,
+sé que tal vez ya es tarde
+para pedir que lo olvides,
+pero no es tarde para intentar cambiar.
+
+No quiero seguir siendo
+la razón de tus noches malas.
+Quiero ser la razón
+de que sonrías sin esfuerzo,
+de que te sientas segura,
+de que no tengas que dudar más.
+
+Perdóname por tantos errores,
+por el tiempo que tardé en entenderlo,
+pero ya lo entendí:
+te amo, Luana,
+y de aquí en adelante
+quiero demostrártelo
+no con palabras,
+sino con quien decido ser cada día.
+        </p>
+
+        <div class="firma">
+            no espero que olvides todo lo que hice, espero que seas feliz el tiempo que estes a mi lado ♡
+        </div>
+
+        <button
+            class="cerrar"
+            onclick="cerrarCarta(7)">
+
+            Te adoro, sere mejor, tu y yo, tendremos una familia pro
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CARTA 8
+===================================================== -->
+
+<div class="modal" id="modal8">
+
+    <div class="papel">
+
+        <h2>
+            Solo nosotros dos
+        </h2>
+
+        <p>
+Sé que las cosas hoy son distintas,
+que tu vida sigue su curso
+aunque yo no esté en el centro de ella.
+No te pido nada para hoy,
+ni para mañana.
+
+Solo quiero que sepas
+que en algún rincón de mí
+sigo soñando con un día
+donde pueda gritar que eres mía,
+que todo el mundo lo sepa,
+sin miedo, sin distancia.
+
+No te pido que decidas por mí,
+sé que nunca te ha gustado
+lastimar a nadie,
+y eso es parte de lo que amo de ti.
+
+Solo te digo esto:
+te amo demasiado,
+y si algún día el camino
+nos vuelve a cruzar
+como solo nosotros dos,
+ahí voy a estar.
+        </p>
+
+        <div class="firma">
+            Con amor, Jesús ♡
+        </div>
+
+        <button
+            class="cerrar"
+            onclick="cerrarCarta(8)">
+
+            si estas leyendo? KASJDKADS, te adoro
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CARTA 9
+===================================================== -->
+
+<div class="modal" id="modal9">
+
+    <div class="papel">
+
+        <h2>
+            La casa que construiremos
+        </h2>
+
+        <p>
+A los 23, tal vez 24,
+quiero una casa,
+o un departamento, no importa cuál,
+lo que importa es que sea nuestro,
+algo que construyamos con esfuerzo,
+tú y yo, desde cero.
+
+Sueño con vivir juntos,
+dormir juntos,
+despertar y que estés ahí,
+sin distancia, sin pantallas de por medio,
+solo nosotros y lo que armamos.
+
+Y a los 25,
+sueño con algo más grande todavía:
+nuestros pequeños,
+una familia que empezó
+en dos personas que no se rindieron.
+
+Sé que somos jóvenes,
+sé que esto suena a puro sueño,
+y sí, lo es.
+Pero son sueños que pienso cumplir,
+uno por uno,
+hasta que dejen de ser sueños
+y sean nuestra vida.
+
+Seremos felices, Luana,
+tú y yo.
+Te amo.
+
+Te amo.
+        </p>
+
+        <div class="firma">
+            son mi sueños, espero cumplirlos a tu lado♡
+        </div>
+
+        <button
+            class="cerrar"
+            onclick="cerrarCarta(9)">
+
+            te gusto?
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CARTA 10
+===================================================== -->
+
+<div class="modal" id="modal10">
+
+    <div class="papel">
+
+        <h2>
+            Contigo, hasta en los días grises
+        </h2>
+
+        <p>
+Desde el 27 de enero
+hasta hoy,
+ha habido de todo:
+días grises, días de dudas,
+días donde yo mismo casi me pierdo.
+
+Pero también hubo tus ojos,
+tu voz en la distancia,
+tu paciencia cuando no la merecía,
+y la decisión de ser mejor
+por ti, para ti.
+
+No sé qué días grises falten por venir.
+No sé cuántas veces más
+la vida nos ponga a prueba.
+Pero sé esto:
+
+Quiero estar ahí,
+en los grises y en los claros,
+en los que sueño despierto
+y en los que aún no llegan.
+
+No te prometo un camino perfecto.
+Te prometo quedarme,
+elegirte otra vez cada día,
+hasta que la casa que soñamos
+sea real,
+hasta que los días grises
+sean solo eso: días,
+y no el fin de nada.
+
+Contigo, Luana.
+Hasta en los días grises.
+Hasta siempre.
+♡
+        </p>
+
+        <div class="firma">
+            Con todo mi amor y tiempo, espero que te haya gustado cada carta, y las que faltan♡
+        </div>
+
+        <button
+            class="cerrar"
+            onclick="cerrarCarta(10)">
+
+            te amo luana, feliz dia de las flores amarillas.
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+    /* ========================================
+       ABRIR UNA CARTA
+    ======================================== */
+
+    function abrirCarta(numero) {
+
+        const modal =
+            document.getElementById(
+                "modal" + numero
+            );
+
+        modal.classList.add("activa");
+
+        document.body.style.overflow =
+            "hidden";
+    }
+
+
+
+    /* ========================================
+       CERRAR UNA CARTA
+    ======================================== */
+
+    function cerrarCarta(numero) {
+
+        const modal =
+            document.getElementById(
+                "modal" + numero
+            );
+
+        modal.classList.remove("activa");
+
+        document.body.style.overflow =
+            "auto";
+    }
+
+
+
+    /* ========================================
+       CERRAR HACIENDO CLIC FUERA
+    ======================================== */
+
+    document.querySelectorAll(".modal")
+        .forEach(function(modal) {
+
+            modal.addEventListener(
+                "click",
+                function(event) {
+
+                    if (
+                        event.target === modal
+                    ) {
+
+                        modal.classList.remove(
+                            "activa"
+                        );
+
+                        document.body.style.overflow =
+                            "auto";
+                    }
+
+                }
+            );
+
+        });
+
+
+
+    /* ========================================
+       CERRAR CON ESC
+    ======================================== */
+
+    document.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Escape") {
+
+                document.querySelectorAll(".modal")
+                    .forEach(function(modal) {
+
+                        modal.classList.remove(
+                            "activa"
+                        );
+
+                    });
+
+                document.body.style.overflow =
+                    "auto";
+            }
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>
