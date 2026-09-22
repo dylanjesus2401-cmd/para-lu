@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para ti, Luana</title>
+<style>
+  :root{
+    --bg: #0a0704;
+    --gold: #ffd54f;
+    --gold-deep: #f9a825;
+    --leaf: #6b7f3a;
+    --leaf-dark: #4d5c28;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html,body{
+    margin:0; padding:0;
+    width:100%; height:100%;
+    background: radial-gradient(ellipse at 50% 30%, #1a1409 0%, var(--bg) 70%);
+    overflow:hidden;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+
+  .escena{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  /* Contenedor del ramo: ocupa la mitad de la pantalla */
+  .ramo-contenedor{
+    position: relative;
+    width: 50vw;
+    max-width: 620px;
+    height: 70vh;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+  }
+
+  .titulo{
+    position:absolute;
+    top: 6%;
+    left:50%;
+    transform: translateX(-50%);
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    opacity: 0.85;
+    text-align:center;
+    width: 90%;
+  }
+
+  /* --- Envoltura del ramo --- */
+  .envoltura{
+    position:absolute;
+    bottom: 6%;
+    left:50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 190px;
+    background: linear-gradient(160deg, #d9a441, #a5701f 60%, #6e4713);
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    box-shadow: 0 0 40px rgba(255,213,79,0.15);
+  }
+  .lazo{
+    position:absolute;
+    bottom: 20%;
+    left:50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 40px;
+    z-index: 5;
+  }
+  .lazo::before, .lazo::after{
+    content:"";
+    position:absolute;
+    width: 34px; height: 34px;
+    background: var(--gold-deep);
+    border: 2px solid #7a4e14;
+    top:0;
+  }
+  .lazo::before{ left:0; border-radius: 60% 60% 60% 0%; transform: rotate(20deg); }
+  .lazo::after{ right:0; border-radius: 60% 60% 0% 60%; transform: rotate(-20deg); }
+  .lazo-nudo{
+    position:absolute;
+    bottom: 20%;
+    left:50%;
+    transform: translateX(-50%);
+    width: 16px; height:16px;
+    background: #7a4e14;
+    border-radius: 50%;
+    z-index: 6;
+  }
+
+  /* --- Tallos --- */
+  .tallo{
+    position:absolute;
+    bottom: 22%;
+    width: 5px;
+    background: linear-gradient(var(--leaf), var(--leaf-dark));
+    border-radius: 3px;
+    transform-origin: bottom center;
+    animation: mecer 4.5s ease-in-out infinite;
+  }
+  .tallo .hoja{
+    position:absolute;
+    width: 22px; height: 12px;
+    background: var(--leaf);
+    border-radius: 60% 0% 60% 0%;
+  }
+
+  /* --- Flor --- */
+  .flor{
+    position:absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    animation: brillar 3s ease-in-out infinite;
+  }
+  .petalo{
+    position:absolute;
+    width: 26px;
+    height: 38px;
+    background: radial-gradient(circle at 30% 30%, #fff3c4, var(--gold) 55%, var(--gold-deep) 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    top: 50%; left: 50%;
+    transform-origin: bottom center;
+    box-shadow: 0 0 8px rgba(255, 213, 79, 0.35);
+  }
+  .centro{
+    position:absolute;
+    top:50%; left:50%;
+    width: 22px; height: 22px;
+    background: radial-gradient(circle, #8a5a12, #5c3a0a);
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: inset 0 0 4px #2e1c04;
+    z-index: 3;
+  }
+
+  @keyframes mecer{
+    0%,100%{ transform: rotate(-3deg); }
+    50%{ transform: rotate(3deg); }
+  }
+  @keyframes brillar{
+    0%,100%{ filter: brightness(1) drop-shadow(0 0 4px rgba(255,213,79,0.3)); }
+    50%{ filter: brightness(1.25) drop-shadow(0 0 14px rgba(255,213,79,0.55)); }
+  }
+
+  /* --- Pétalos cayendo de fondo --- */
+  .petalo-cae{
+    position:absolute;
+    top: -5%;
+    width: 14px;
+    height: 14px;
+    background: var(--gold);
+    border-radius: 50% 0% 50% 50%;
+    opacity: 0.7;
+    animation: caer linear infinite;
+    z-index: 0;
+  }
+  @keyframes caer{
+    0%{ transform: translateY(0) rotate(0deg); opacity:0; }
+    10%{ opacity:0.7; }
+    100%{ transform: translateY(110vh) rotate(360deg); opacity:0; }
+  }
+
+  .mensaje{
+    position:absolute;
+    bottom: 4%;
+    left:50%;
+    transform: translateX(-50%);
+    color: var(--gold);
+    font-style: italic;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    text-align:center;
+    width: 85%;
+  }
+</style>
+</head>
+<body>
+
+<div class="escena">
+  <div class="titulo">Con todo mi cariño</div>
+
+  <div class="ramo-contenedor" id="ramo">
+    <!-- Envoltura -->
+    <div class="envoltura"></div>
+    <div class="lazo"></div>
+    <div class="lazo-nudo"></div>
+    <!-- Los tallos y flores se generan con JS -->
+  </div>
+
+  <div class="mensaje">Feliz día de las flores amarillas, Luana 🌼</div>
+</div>
+
+<script>
+  const ramo = document.getElementById('ramo');
+  const escena = document.querySelector('.escena');
+
+  // --- Generar tallos con flores, en abanico ---
+  const totalFlores = 7;
+  const anguloMax = 40; // grados de abertura del abanico
+  for (let i = 0; i < totalFlores; i++){
+    const t = i / (totalFlores - 1); // 0 a 1
+    const angulo = -anguloMax/2 + t * anguloMax;
+    const altura = 150 + Math.sin(t * Math.PI) * 40; // los del centro más altos
+    const desplazamiento = (t - 0.5) * 140; // separación horizontal
+
+    const tallo = document.createElement('div');
+    tallo.className = 'tallo';
+    tallo.style.height = altura + 'px';
+    tallo.style.left = `calc(50% + ${desplazamiento}px)`;
+    tallo.style.transform = `rotate(${angulo}deg)`;
+    tallo.style.animationDelay = (i * 0.3) + 's';
+
+    // Hoja decorativa
+    const hoja = document.createElement('div');
+    hoja.className = 'hoja';
+    hoja.style.top = (altura * 0.4) + 'px';
+    hoja.style.left = (i % 2 === 0 ? '-16px' : '10px');
+    hoja.style.transform = i % 2 === 0 ? 'rotate(-30deg)' : 'rotate(30deg) scaleX(-1)';
+    tallo.appendChild(hoja);
+
+    // Flor con pétalos
+    const flor = document.createElement('div');
+    flor.className = 'flor';
+    flor.style.animationDelay = (i * 0.4) + 's';
+
+    const numPetalos = 8;
+    for (let p = 0; p < numPetalos; p++){
+      const petalo = document.createElement('div');
+      petalo.className = 'petalo';
+      const rot = (360 / numPetalos) * p;
+      petalo.style.transform = `translate(-50%,-100%) rotate(${rot}deg)`;
+      flor.appendChild(petalo);
+    }
+    const centro = document.createElement('div');
+    centro.className = 'centro';
+    flor.appendChild(centro);
+
+    tallo.appendChild(flor);
+    ramo.appendChild(tallo);
+  }
+
+  // --- Pétalos cayendo de fondo, como en index.html ---
+  const totalCayendo = 18;
+  for (let i = 0; i < totalCayendo; i++){
+    const p = document.createElement('div');
+    p.className = 'petalo-cae';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.animationDuration = (6 + Math.random() * 6) + 's';
+    p.style.animationDelay = (Math.random() * 8) + 's';
+    p.style.width = p.style.height = (8 + Math.random() * 10) + 'px';
+    escena.appendChild(p);
+  }
+</script>
+
+</body>
+</html>
