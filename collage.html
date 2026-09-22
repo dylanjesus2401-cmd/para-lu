@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nuestros recuerdos</title>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        background: radial-gradient(ellipse at 50% 20%, #1a1409 0%, #0a0704 70%);
+        color: #f5f0e6;
+        font-family: Georgia, serif;
+        min-height: 100vh;
+        padding: 40px 20px;
+    }
+
+    .encabezado {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .encabezado small {
+        color: #ffd54f;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+    }
+
+    h1 {
+        font-family: "Brush Script MT", cursive;
+        color: #ffd54f;
+        font-size: 50px;
+        margin: 10px 0;
+    }
+
+    .encabezado p {
+        color: #aaa;
+    }
+
+    .galeria {
+        max-width: 1000px;
+        margin: auto;
+        columns: 3 250px;
+        column-gap: 18px;
+    }
+
+    .foto {
+        position: relative;
+        margin-bottom: 18px;
+        break-inside: avoid;
+        overflow: hidden;
+        border-radius: 12px;
+        border: 1px solid rgba(255,213,79,.4);
+        box-shadow: 0 8px 25px rgba(0,0,0,.4);
+    }
+
+    .foto img {
+        display: block;
+        width: 100%;
+        transition: .5s;
+    }
+
+    .foto:hover img {
+        transform: scale(1.08);
+    }
+
+    .mensaje {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 15px;
+        background: linear-gradient(
+            transparent,
+            rgba(0,0,0,.85)
+        );
+        color: white;
+        opacity: 0;
+        transition: .4s;
+    }
+
+    .foto:hover .mensaje {
+        opacity: 1;
+    }
+
+    .botones {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        margin: 45px auto 10px;
+    }
+
+    .volver, .ir-flores {
+        display: inline-block;
+        width: fit-content;
+        padding: 13px 25px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: .3s;
+    }
+
+    .volver {
+        background: #ffd54f;
+        color: #1a1409;
+    }
+
+    .ir-flores {
+        background: transparent;
+        color: #ffd54f;
+        border: 1px solid #ffd54f;
+    }
+
+    .volver:hover, .ir-flores:hover {
+        transform: scale(1.05);
+    }
+
+    .final {
+        text-align: center;
+        color: #777;
+        margin-top: 30px;
+        font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+
+        body {
+            padding: 30px 12px;
+        }
+
+        h1 {
+            font-size: 42px;
+        }
+
+        .galeria {
+            columns: 2 150px;
+            column-gap: 10px;
+        }
+
+        .foto {
+            margin-bottom: 10px;
+        }
+
+    }
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="encabezado">
+
+    <small>fotos tontitas jsjs</small>
+
+    <h1>Te amo luana ♡</h1>
+
+    <p>
+        Algunas fotos, algunos momentos y muchas cosas que recordar.
+    </p>
+
+</div>
+
+
+<div class="galeria">
+
+    <div class="foto">
+        <img src="foto01.jpg" alt="Nuestro recuerdo">
+        <div class="mensaje">
+            la primera vez q pelaron a chuscas JASJDKADK, q gracioso
+        </div>
+    </div>
+
+    <div class="foto">
+        <img src="foto02.jpg" alt="Nuestro recuerdo">
+        <div class="mensaje">
+            CUANDO IBAMOS A LA ESCUELA Y HICISTE TU MUÑECO DE NIEVE AMOR
+        </div>
+    </div>
+
+    <div class="foto">
+        <img src="foto03.jpg" alt="Nuestro recuerdo">
+        <div class="mensaje">
+            me encanta como abrazas a tommy, mi bebito lindo, los amo a los dos
+        </div>
+    </div>
+
+    <div class="foto">
+        <img src="foto04.jpg" alt="Nuestro recuerdo">
+        <div class="mensaje">
+            aqui yo presumiendo a mi esposa
+        </div>
+    </div>
+
+    <div class="foto">
+        <img src="foto05.jpg" alt="Nuestro recuerdo">
+        <div class="mensaje">
+            aqui una fotito de recuerdo jsjs, q gracioso amor
+        </div>
+    </div>
+
+    <div class="foto">
+        <img src="foto6.jpg" alt="Nuestro recuerdo">
+        <div class="mensaje">
+            me gusto mucho esta foto que tomaste, me encanta la idea de que me tomas fotitos jsjs
+        </div>
+    </div>
+
+    <div class="foto">
+        <img src="foto7.jpg" alt="Nuestro recuerdo">
+        <div class="mensaje">
+            Contigo hasta las cosas simples se sienten especiales.
+        </div>
+    </div>
+
+    <div class="foto">
+        <img src="foto8.jpg" alt="Nuestro recuerdo">
+        <div class="mensaje">
+            aca te miras jodidamente hermosa.
+        </div>
+    </div>
+
+    <div class="foto">
+        <img src="foto9.jpg" alt="Nuestro recuerdo">
+        <div class="mensaje">
+            Cada foto contigo es un motivo para sonreír.
+        </div>
+    </div>
+
+    <div class="foto">
+        <img src="foto10.jpg" alt="Nuestro recuerdo">
+        <div class="mensaje">
+            aqui mi princesa haciendose la distraida bien aestetik, mi hermosa bebe
+        </div>
+    </div>
+
+    <div class="foto">
+        <img src="foto11.jpg" alt="Nuestro recuerdo">
+        <div class="mensaje">
+            aca te miras demasiado linda, ten linda mi bebe hermosa
+        </div>
+    </div>
+
+    <div class="foto">
+        <img src="foto12.jpg" alt="Nuestro recuerdo">
+        <div class="mensaje">
+            Te amo, Luana ♡
+        </div>
+    </div>
+
+</div>
+
+
+<div class="botones">
+
+    <a href="carta.html" class="volver">
+        ← Volver a la carta
+    </a>
+
+    <a href="ramo.html" class="ir-flores">
+        Ver el ramo 🌼
+    </a>
+
+</div>
+
+<div class="final">
+    Me gustaria poner mas fotitos, tuyas o de los dos, dios eres muy linda, espero te este gustando como va quedando todo, te amo demasiado mi bebe, te adoro cielo♡
+</div>
+
+
+</body>
+
+</html>
